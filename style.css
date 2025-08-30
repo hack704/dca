@@ -1,0 +1,288 @@
+
+:root {
+  --primary: #556B2F;
+  --accent: #ffd600;
+  --background: #f2f6fa;
+  --white: #fff;
+  --border: #e0e0e0;
+}
+
+/* Section container (results / admit cards / latest jobs) */
+.section-container {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 6px 18px rgba(35,41,122,0.04);
+}
+.section-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.section-header h2 { 
+  font-weight: 900; 
+  margin: 0; 
+  font-size: 1.2rem; 
+  color: var(--primary);
+  text-transform: uppercase;
+}
+.view-all { 
+  color: var(--primary); 
+  text-decoration: none; 
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+  bottom: 0.5rem;
+}
+
+/* small card grid */
+.card-grid.small-cards {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+.small-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 0.65rem;
+  border-radius: 8px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.small-card a {
+  display: block;
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 0.35rem;
+  text-align: left;
+}
+.small-card .meta {
+  color:#6b6f86;
+  font-size:0.9rem;
+}
+.small-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(35,41,122,0.06); }
+
+/* Army container styles */
+.army {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 6px 18px rgba(35,41,122,0.06);
+}
+.army h2 { margin: 0 0 0.5rem 0; color: var(--primary); }
+
+/* Nav pills for army subsections */
+.army-nav { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem; }
+.army-tab {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--primary);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, transform 0.08s;
+}
+.army-tab:hover { transform: translateY(-2px); }
+.army-tab.active {
+  background: var(--primary);
+  color: var(--white);
+  border-color: transparent;
+}
+
+/* subsections layout */
+.army-section { display: none; margin: 0.5rem 0; }
+.army-section.active { display: block; }
+.army-section h3 { margin-top: 0; color: var(--primary); }
+
+/* compact list & card grid inside army */
+.army-section ul { padding-left: 1.1rem; color: #39406a; }
+.army-section .card-grid { margin-top: 0.75rem; }
+
+/* CTA / subscribe button inside army */
+.card-link {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.12s, transform 0.08s;
+}
+.card-link:hover { background: #1a205a; transform: translateY(-2px); }
+
+/* small helpers */
+.army .meta { color: #6b6f86; font-size: 0.95rem; margin-top: 0.25rem; }
+
+/* global styles */
+* { box-sizing: border-box; }
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: var(--background);
+  position: relative;
+  margin: 0;
+  color: var(--primary);
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('military-army-black-brown-cream-and-green-color-camouflage-seamless-pattern-free-vector.jpg');
+  opacity: 0.5;
+  z-index: -1;
+}
+  
+header {
+  background: #006400;
+  color: var(--white);
+  padding: 1rem 0;
+}
+.nav-container {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1100px; margin: auto; padding: 0 1rem;
+}
+.logo { font-weight: bold; font-size: 1.6rem; letter-spacing: 0.5px; }
+nav a {
+  color: var(--white); text-decoration: none;
+  margin: 0 0.75rem; font-weight: 500;
+}
+.search-bar {
+  padding: 0.5rem 0.75rem; border-radius: 20px; border: none; outline: none;
+}
+.breaking-news {
+  background: var(--accent); color: var(--primary);
+  padding: 0.75rem 1rem; font-weight: 600; text-align: center;
+}
+main { max-width: 1100px; margin: 1.5rem auto; padding: 0 1rem; }
+.featured h2, .updates h2 { margin-top: 0; color: var(--primary); }
+.card-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem; margin: 2rem 0;
+}
+.card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  text-align: left;
+  display: flex; flex-direction: column; justify-content: space-between;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(35,41,122,0.12); }
+.card h3 { margin: 0 0 0.5rem 0; font-size: 1.05rem; }
+.card p { margin: 0; color: #6b6f86; font-weight: 600; }
+.card a {
+  display: inline-block;
+  background: var(--primary); color: var(--white); padding: 0.5rem 1rem;
+  border-radius: 5px; text-align: center; text-decoration: none; margin-top: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.card a:hover { background: var(--accent); color: var(--primary); }
+.updates ul { padding-left: 1.1rem; color: #39406a; }
+.updates li { margin: 0.5rem 0; }
+footer {
+  background: var(--primary); color: var(--white);
+  padding: 1rem 0; text-align: center; margin-top: 2rem;
+}
+.footer-content { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 1rem; }
+.footer-content nav a { color: var(--accent); margin: 0 0.5rem; text-decoration: none; font-weight: 600; }
+
+/* three-column layout for Latest Jobs / Results / Admit Cards */
+.three-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  margin: 2rem 0;
+  padding-bottom: 3rem; /* Add padding at the bottom */
+}
+
+/* ensure each section uses full height card-like appearance */
+.three-columns .section-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem; /* Increased padding inside containers */
+  overflow: visible; /* Allow content to flow naturally */
+}
+
+/* make the small-cards grid without scroll */
+.three-columns .card-grid.small-cards {
+  flex-grow: 1;
+  padding-right: 0.5rem;
+  padding-bottom: 1rem;
+  height: auto; /* Auto height to allow natural page flow */
+  margin-bottom: 1rem;
+  overflow: visible; /* No scrollbars */
+}
+
+/* No scrollbar needed */
+
+/* responsive: collapse to single column under 1000px, two columns under 1400px */
+@media (max-width: 1000px) {
+  .three-columns { grid-template-columns: 1fr; }
+  .three-columns .section-container { 
+    min-height: auto; 
+    margin-bottom: 2rem; /* Add space between stacked containers */
+  }
+  .three-columns .card-grid.small-cards { 
+    height: auto; /* Auto height on mobile */
+  }
+}
+@media (min-width: 1001px) and (max-width: 1400px) {
+  .three-columns { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* responsive tweaks */
+@media (max-width: 700px) {
+  .nav-container, .footer-content { flex-direction: column; gap: 0.75rem; align-items: stretch; }
+  nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .logo { font-size: 1.3rem; }
+  .army { padding: 0.85rem; }
+  .army-nav { gap: 0.4rem; }
+  .army-tab { padding: 0.35rem 0.6rem; font-size: 0.95rem; }
+  .card-grid.small-cards { grid-template-columns: 1fr; }
+  .section-header { flex-direction:column; align-items:flex-start; gap:0.4rem; }
+}
+.card-grid.small-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.small-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a237e;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 90px;
+  margin-bottom: 1rem;
+}
+.small-card span {
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  color: #555;
+}
